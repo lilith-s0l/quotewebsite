@@ -1,0 +1,198 @@
+:root { 
+    font-family: system-ui, sans-serif; 
+    color: #312b07; 
+    background: rgb(180, 169, 149); 
+    line-height: 1.5; }
+
+* { 
+    box-sizing: border-box; 
+}
+
+body { 
+    margin: 0; 
+}
+
+.layout { 
+    max-width: 1200px;
+    margin: 3rem auto; 
+    padding: 0 1rem; 
+    display: grid; 
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    grid-template-areas: "panel resume";
+    gap: 1.5rem; 
+}
+
+.panel {
+    grid-area: panel;
+}
+
+.resume {
+    grid-area: resume;
+}
+
+.panel, .resume { 
+    background: rgb(245, 248, 230); 
+    border-radius: 2rem; 
+    padding: clamp(1.25rem, 5vw, 2.5rem); 
+    box-shadow: 0 20px 5rem #977c4b42; 
+}
+
+h1, h2, h3, p { 
+    margin-top: 0; 
+}
+
+h1, h2 { 
+    line-height: 1.2; 
+    margin-bottom: .5rem; 
+}
+
+.field { 
+    display: flex; 
+    flex-direction: column; 
+    margin-bottom: 1rem; 
+}
+
+label { 
+    font-weight: 650; 
+    margin-bottom: .3rem; 
+}
+
+.optional { 
+    font-weight: 400; 
+    color: #bdbdae; 
+}
+
+input, textarea, button { 
+    font: inherit; 
+}
+
+input, textarea { 
+    width: 100%; 
+    border: 2px solid #c7c7b7; 
+    border-radius: 0.6rem; 
+    padding: .65rem; 
+}
+
+input:focus, textarea:focus, button:focus-visible { 
+    outline: 3px solid #80c8b6; 
+    outline-offset: 2px; 
+}
+
+[aria-invalid="true"] { 
+    border-color: #b3261e; 
+}
+
+.error { 
+    color: #a11f18; 
+    font-size: .875rem; 
+}
+
+.years { 
+    display: grid; 
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
+    gap: 1rem; 
+}
+
+button { 
+    background-image: linear-gradient(#3f790a, #0a5222);  
+    color: white; 
+    border: 0; 
+    border-radius: 2rem; 
+    padding: 1.2rem 4rem; 
+    font-weight: 600; 
+    font-size: 1.2rem;
+    cursor: pointer; 
+}
+
+button:disabled { 
+    opacity: .65; 
+    cursor: wait; 
+}
+
+.form-actions, .item-actions { 
+    display: flex; 
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: .5rem; 
+}
+
+
+/* OTHER BODY CONTENT FOLLOWS */
+
+button.secondary { 
+    background: #e2ffd9; 
+    color: #143108; 
+    border: 1px solid #143108; 
+    font-size: 0.8rem;
+    margin-right: 3rem;
+
+}
+
+[hidden] { 
+    display: none !important; 
+}
+
+#form-status { 
+    margin: .75rem 0 0; 
+}
+
+.resume-header { 
+    text-align: center;
+}
+
+.headerPeriod {
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 3rem; 
+    margin-top: -5rem;
+}
+
+.resume-header p:last-child { 
+    color: #bdbdae; 
+}
+
+.experience { 
+    border-bottom: 1px solid #d9e1e5; 
+    padding-bottom: 1rem; 
+    margin-bottom: 1rem; 
+}
+
+.experience-heading { 
+    display: flex; 
+    justify-content: space-between; 
+    gap: 1rem; 
+    flex-wrap: wrap; 
+}
+
+.experience h3, .experience .dates { 
+    margin-bottom: .25rem; 
+}
+
+.dates, .employer { 
+    color: #bdbdae; 
+}
+
+.accomplishment { 
+    white-space: pre-wrap; 
+    overflow-wrap: anywhere; 
+    font-size: 2rem;
+    font-style: italic;
+}
+
+.resume-footer { 
+    color: #52636e; 
+    font-size: .875rem; 
+    margin-top: 2rem; 
+}
+
+
+@media (max-width: 700px) {
+    .layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "panel"
+            "resume";
+    }
+
+    .years { grid-template-columns: 1fr; gap: 0; }
+}
