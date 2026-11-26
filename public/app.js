@@ -74,9 +74,9 @@ async function loadItems() {
       node.querySelector('article').dataset.itemId = item._id;
       // node.querySelector('.job-title').textContent = item.job_title;
       // node.querySelector('.dates').textContent = `${item.start_year} – ${item.end_year ?? 'Present'}`;
-      node.querySelector('.accomplishment').textContent = `“ ${item.accomplishment} ”`;
-      node.querySelector('.employer').textContent = item.employer;
-  
+      node.querySelector('.quote').textContent = `“ ${item.quote} ”`;
+      node.querySelector('.employer').textContent = `~ ${item.employer} `;
+      
       const editButton = node.querySelector('.edit-item');
       const deleteButton = node.querySelector('.delete-item');
       editButton.setAttribute('aria-label', `Edit ${item.job_title} at ${item.employer}`);
