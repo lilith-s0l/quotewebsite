@@ -12,6 +12,7 @@ body {
     margin: 0; 
 }
 
+/* Asked Copilot to divide panels into left and right sides */
 .layout { 
     max-width: 1200px;
     margin: 3rem auto; 
@@ -29,16 +30,22 @@ body {
 .resume {
     grid-area: resume;
 }
+/* End of Copilot assistance */
 
 .panel, .resume { 
     background: rgb(245, 248, 230); 
     border-radius: 2rem; 
     padding: clamp(1.25rem, 5vw, 2.5rem); 
     box-shadow: 0 20px 5rem #977c4b42; 
+    align-content: center;
 }
 
 h1, h2, h3, p { 
     margin-top: 0; 
+}
+
+.subtext {
+    margin-bottom: 2.5rem;
 }
 
 h1, h2 { 
@@ -49,7 +56,7 @@ h1, h2 {
 .field { 
     display: flex; 
     flex-direction: column; 
-    margin-bottom: 1rem; 
+    margin-bottom: 2.5rem; 
 }
 
 label { 
@@ -124,8 +131,20 @@ button.secondary {
     color: #143108; 
     border: 1px solid #143108; 
     font-size: 0.8rem;
-    margin-right: 3rem;
+    /* margin-right: 3rem; */
 
+}
+
+/* EDIT AND DELETE BUTTONS */
+button.edit-item.secondary {
+    padding: .8rem 3rem;
+    margin-right: 2rem;
+    margin-top: 2rem;
+}
+button.delete-item.secondary {
+    padding: .8rem 3rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
 }
 
 [hidden] { 
@@ -152,7 +171,7 @@ button.secondary {
 }
 
 .experience { 
-    border-bottom: 1px solid #d9e1e5; 
+    border-bottom: 1px dashed #b2a58f; 
     padding-bottom: 1rem; 
     margin-bottom: 1rem; 
 }
@@ -193,6 +212,7 @@ button.secondary {
             "panel"
             "resume";
     }
-
-    .years { grid-template-columns: 1fr; gap: 0; }
+    .years { 
+        grid-template-columns: 1fr; gap: 0; 
+    }
 }
