@@ -75,7 +75,7 @@ async function loadItems() {
       // node.querySelector('.job-title').textContent = item.job_title;
       // node.querySelector('.dates').textContent = `${item.start_year} – ${item.end_year ?? 'Present'}`;
       node.querySelector('.quote').textContent = `“ ${item.quote} ”`;
-      node.querySelector('.employer').textContent = `~ ${item.employer} `;
+      node.querySelector('.author').textContent = `~ ${item.author} `;
       
       const editButton = node.querySelector('.edit-item');
       const deleteButton = node.querySelector('.delete-item');
