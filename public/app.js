@@ -48,7 +48,7 @@ cancelEditButton.addEventListener('click', () => {
 
 function validateField(field) {
   if (field.type === 'text' || field.tagName === 'TEXTAREA') {
-    field.setCustomValidity(field.validity.valueMissing || field.value.trim() ? '' : 'Enter a value that is not just whitespace.');
+    field.setCustomValidity(field.validity.valueMissing || field.value.trim() ? '' : 'If author is unknown, type N/A.');
   }
   const valid = field.checkValidity();
   document.getElementById(`${field.id}-error`).textContent = valid ? '' : field.validationMessage;
