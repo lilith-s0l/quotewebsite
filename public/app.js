@@ -79,8 +79,8 @@ async function loadItems() {
       
       const editButton = node.querySelector('.edit-item');
       const deleteButton = node.querySelector('.delete-item');
-      editButton.setAttribute('aria-label', `Edit ${item.job_title} at ${item.employer}`);
-      deleteButton.setAttribute('aria-label', `Delete ${item.job_title} at ${item.employer}`);
+      editButton.setAttribute('aria-label', `Edit ${item.job_title} at ${item.author}`);
+      deleteButton.setAttribute('aria-label', `Delete ${item.job_title} at ${item.author}`);
       editButton.disabled = busy;
       deleteButton.disabled = busy;
       editButton.addEventListener('click', () => editItem(item));
@@ -97,7 +97,7 @@ async function loadItems() {
 }
 
 async function deleteItem(item, article) {
-  if (busy || !confirm(`Delete ${item.job_title} at ${item.employer}?`)) return;
+  if (busy || !confirm(`Delete ${item.job_title} at ${item.author}?`)) return;
   setBusy(true);
   resumeStatus.textContent = 'Deleting quote…';
   try {
